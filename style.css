@@ -1,0 +1,386 @@
+body{
+    margin:0;
+}
+
+
+html {
+  overflow-x: hidden;
+}
+
+header {
+    background-color: #000000;
+    margin: 0;
+    border:0;
+    width: 100%;
+    height: 102.4px;
+    display: flex;
+}
+
+li {
+list-style: none;
+float:left;
+}
+
+.header-logo img {
+    width: 160px;
+    height: 23.75px;
+    float: left;
+    padding:30px;
+    background-color: #000000;
+}
+
+.header-list ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
+    float: left;
+    color:#e7201b;
+    padding:10px;
+}
+
+
+.header-list li {
+    margin: 4px 0;
+    padding: 0 8px;
+    font-size:14px;
+    line-height:1.6;
+    letter-spacing:normal;
+    font-family:LinotypeUnivers330-BasicLight;
+}
+
+.header-list li:hover {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.header-list li a,
+.header-list li a:visited,
+.header-list li a:active {
+    color: inherit;          
+    text-decoration: none;  
+}
+
+.header-list li:hover,
+.header-list li:hover a,
+.header-list li:hover a:visited {
+    color: #ffffff; } 
+
+/* ハンバーガー */
+.header-list {
+  width: 90%;
+  max-width:1000px ;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.header.active {
+  background-color: #e7201b;
+}
+
+/* 開いてない時 */
+#hmb {
+  background-color: #000000;
+  width: 32px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+  z-index: 30;
+}
+#hmb span {
+  width: 32px;
+  height: 3px;
+  display: block;
+  background-color: #e7201b;
+  position: absolute;
+
+  border-radius: 2px;
+  transition: .2s;
+}
+/* hmbのアイコン */
+#hmb span:first-child {top: 0;}
+#hmb span:nth-child(2) {top: 12px;}
+#hmb span:last-child {top: 24px;}
+
+nav{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 400px;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  padding: 20;
+  background-color: #000000;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition-property: all;
+  transition-duration: .2s;
+
+}
+nav ul li a {
+  background-color: #000000;
+  display: block;
+  margin-bottom:16px ;
+  display: grid;
+  gap: 1rem ;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+}
+/* アクティブ */
+.active #hmb span:first-child {
+  top:12px;
+  transform: rotate(45deg);
+
+}
+.active #hmb span:nth-child(2) {
+  opacity: 0;
+}
+.active #hmb span:last-child {
+  top:12px;
+  transform: rotate(-45deg);
+}
+.active nav {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+.active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #000000;
+  width: 100vh;
+  opacity: 0.4;
+  z-index: 10;
+}
+
+/* html, bodyのスタイル */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* mainのスタイル */
+.main {
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+/* sliderのスタイル */
+.slider img {
+    display: block;
+    height: auto;
+
+}
+
+h1 {
+    color: #e7201b;
+    text-align: center;
+    padding: 20px;
+    font-family: "BIZ UDGothic", sans-serif;
+    font-size: 36px;
+    letter-spacing : 0.05em; /* 文字間隔 */
+}
+
+#slick-slide {
+  position: relative;
+  margin: 0 auto;
+  max-width: 100%;
+  overflow: hidden;
+}
+  #slick-slide .slick-slide {
+  height: 100%;
+}
+#slick-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* カスタム矢印だけデザイン */
+.my-arrow {
+  display: block;
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: none;
+  transform: translateY(-50%);
+  z-index: 2;
+  cursor: pointer;
+}
+.my-prev { left: 10px; }
+.my-next { right: 10px; }
+.my-arrow img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* slickのドットカスタマイズ */
+#slick-slide .slick-dots {
+  display: flex; /* 横並びにする */
+  justify-content: center; /* 中央揃え */
+  margin-top: 30px; /* 上の余白 */
+  padding: 0;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+#slick-slide .slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* ←ここで丸にしている */
+  background: #e7201b;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#slick-slide .slick-dots li.slick-active button {
+  background:transparent; /* 背景を透明に */
+  border: 2px solid #e7201b; /* 枠線の色を変更 */
+}
+
+.insta-slider {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.insta-slider .slick-slide {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: stretch;
+}
+.insta-slider img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* スライドの余白 */
+.insta-slider .slick-slide {
+  padding: 0 8px; /* 左右に8pxの余白 */
+  box-sizing: border-box;
+}
+
+.insta-slider {
+  padding: 0 8px;
+}
+
+.insta-slider .slick-slide {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: stretch;
+}
+.insta-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.insta-slider .slick-slide:hover {
+  filter: brightness(0.4); /* 少し暗くする */
+  transition: filter 0.3s;
+}
+
+
+/* newのスタイル */
+.new-1 { color: #e7201b; font-weight: bold; }
+.new-2 { color: #888; font-size: 12px; }
+.new-3 { color: #111; font-size: 15px; }
+.new-4 { color: #e7201b; font-size: 13px; }
+
+
+.new-info {
+  list-style:none;/*デフォルトの指定を解除*/
+  /* float:left; */
+  margin:20px;/*余白を指定*/
+  padding:20px;/*余白を指定*/
+  text-align: center; /* テキストを中央揃え */
+  background-color: #ffffff;
+}
+.new-info img {
+  width: 80%;
+  height: auto;
+}
+
+.new-item {
+  display: grid;
+  gap: 1rem ;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* border: solid red 1px; */
+}
+#sry-slider {      /* 高さも120pxに固定 */
+  object-fit: contain;  /* 画像の縦横比を保ったまま収める */
+  display: block;
+  display: flex;
+  overflow: hidden;
+  padding:50px ;
+}
+#sry-slider img {
+  width: 100%;           /* スライド枠いっぱいに広げる */
+  height: auto;         /* 高さを固定（お好みで調整） */
+  object-fit: cover;     /* 画像の縦横比を保ちつつ枠いっぱいに切り抜き */
+  display: block;
+}
+
+/* slickのドットカスタマイズ */
+#sry-slider .slick-dots {
+  display: flex; /* 横並びにする */
+  justify-content: center; /* 中央揃え */
+  margin-top: 30px; /* 上の余白 */
+  padding: 0;
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+#sry-slider .slick-dots li button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%; /* ←ここで丸にしている */
+  background: #e7201b;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.lala-image {
+  position: relative;
+  overflow: hidden;
+}
+  
+.lala-image img:hover {
+  opacity: 0.1;
+}
+
+
+
+/* .header-list { 
+  display: none;
+}
+.media-size{
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .header-list {
+    display: block;
+  }
+  .media-size {
+    display: none;
+  }
+}
