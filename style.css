@@ -365,6 +365,20 @@ h1 {
 .lala-image img:hover {
   opacity: 0.1;
 }
+.lala-image li img {
+  width: 50% ;
+  object-fit: contain; /* 画像の縦横比を保ったまま収める */
+  display: block; 
+}
+
+.lala-image ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 横2列 */                           /* 画像の間隔（お好みで調整） */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-items: center;                 /* 画像をセル内中央に */
+}
 
 
 
