@@ -374,7 +374,7 @@ h1 {
 
 .lala-image ul {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 横2列 */                           /* 画像の間隔（お好みで調整） */
+  grid-template-columns: repeat(2, 1fr); /* 横2列 */                           
   padding:20px;
   margin: 20px;
   gap: 24px; /* 画像の間隔（お好みで調整） */
@@ -382,6 +382,29 @@ h1 {
   justify-items: center;                 /* 画像をセル内中央に */
 }
 
+.popo-image {
+  display: flex;            /* 画像を横並びにする */
+  gap: 24px;        /* 画像同士の間隔（お好みで調整） */
+}
+
+.popo-image img {
+  width: 100%; 
+  object-fit: cover;      /* 画像の縦横比を保ったまま収める */
+  display: block;
+  padding:20px;
+  margin: 20px;
+  gap: 24px;
+  border: solid gray 1px;
+  
+}
+.popo-image p {
+  color: #999999;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 8px;        /* 画像下に余白 */
+  text-align: left;
+  padding: 30px;
+}
 
 
 /* .header-list { 
